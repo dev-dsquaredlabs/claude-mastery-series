@@ -1,3 +1,6 @@
+
+<img src="./assets/banner.png" alt="Claude Desktop Mastery" width="1280" height="640" />
+
 # Claude Mastery: Real Projects, Real Results
 
 A hands-on YouTube series teaching every major Claude Desktop feature through 5 real project builds — no fluff, no toy examples.
@@ -7,10 +10,10 @@ A hands-on YouTube series teaching every major Claude Desktop feature through 5 
 | # | Project | Claude Features | Watch |
 |---|---------|----------------|-------|
 | 1 | SaaS Landing Page | Projects, Artifacts, Customize, Cowork | [Watch →](https://youtu.be/pZ3NyxIWtj0?si=isfB2g0uq0rVJExO) |
-| 2 | Mobile App | Projects, Artifacts, Extended Thinking | [Watch →](#) |
-| 3 | Python Backend / Desktop App | Projects, Artifacts, Git & Cloud Dev | [Watch →](#) |
-| 4 | Data Analysis Dashboard | Projects, Artifacts, Cowork | [Watch →](#) |
-| 5 | Automation Workflow | Projects, Routines, Dispatch | [Watch →](#) |
+| 2 | Mobile App | Projects, Artifacts, Extended Thinking | [Watch →](https://www.youtube.com/playlist?list=PL1rTWcryo2aioxBbN6nxjhITkHAKayk_t) |
+| 3 | Python Backend / Desktop App | Projects, Artifacts, Git & Cloud Dev | [Watch →](https://www.youtube.com/playlist?list=PL1rTWcryo2aioxBbN6nxjhITkHAKayk_t) |
+| 4 | Data Analysis Dashboard | Projects, Artifacts, Cowork | [Watch →](https://www.youtube.com/playlist?list=PL1rTWcryo2aioxBbN6nxjhITkHAKayk_t) |
+| 5 | Automation Workflow | Projects, Routines, Dispatch | [Watch →](https://www.youtube.com/playlist?list=PL1rTWcryo2aioxBbN6nxjhITkHAKayk_t) |
 
 [Full Playlist](https://www.youtube.com/playlist?list=PL1rTWcryo2aioxBbN6nxjhITkHAKayk_t)
 
