@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowra — Automate the work between your apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0a0a0a;
+      --white:    #ffffff;
+      --coral:    #ff5530;
+      --surface:  #f7f8fa;
+      --hairline: #e5e7eb;
+      --text-2:   #45515e;
+      --text-muted: #8e8e93;
+    }
+
+    html { font-family: 'DM Sans', sans-serif; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+    /* ── Promo banner ── */
+    .promo-banner {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: -0.1px;
+    }
+    .promo-banner a {
+      color: var(--coral);
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 4px;
+    }
+    .promo-banner a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      border-bottom: 1px solid var(--hairline);
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--black);
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-ctas {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 9999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-sm { padding: 8px 18px; }
+    .btn-md { padding: 13px 26px; font-size: 15px; }
+
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      border: 1.5px solid var(--black);
+    }
+    .btn-primary:hover { opacity: 0.82; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      border: 1.5px solid var(--black);
+    }
+    .btn-secondary:hover { background: var(--black); color: var(--white); }
+
+    /* ── Hero section ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 40px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+    }
+
+    .hero h1 {
+      font-size: 80px;
+      font-weight: 600;
+      line-height: 1.10;
+      letter-spacing: -2px;
+      color: var(--black);
+      max-width: 820px;
+    }
+
+    .hero-subhead {
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text-2);
+      max-width: 520px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    /* ── Browser mockup ── */
+    .browser-mockup {
+      margin-top: 64px;
+      width: 100%;
+      max-width: 960px;
+      border-radius: 32px;
+      border: 1px solid var(--hairline);
+      background: var(--surface);
+      overflow: hidden;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.04);
+    }
+
+    .browser-chrome {
+      background: var(--white);
+      border-bottom: 1px solid var(--hairline);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .browser-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--hairline);
+    }
+
+    .browser-bar {
+      flex: 1;
+      height: 28px;
+      background: var(--surface);
+      border-radius: 9999px;
+      border: 1px solid var(--hairline);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+    }
+
+    .browser-bar span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .browser-body {
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .browser-body-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      opacity: 0.35;
+    }
+
+    .placeholder-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .browser-body-inner span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ── Trust strip ── */
+    .trust-strip {
+      background: var(--surface);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      padding: 64px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-label {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .trust-names {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-names span {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: -0.2px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+
+      .hero { padding: 72px 20px 60px; }
+
+      .hero h1 {
+        font-size: 48px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero-subhead { font-size: 17px; }
+
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+
+      .browser-mockup { border-radius: 20px; }
+      .browser-body { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Promo banner -->
+  <div class="promo-banner">
+    New: Claude-powered triggers are live<a href="#">→</a>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="nav-logo">Flowra</a>
+    <ul class="nav-links">
+      <li><a href="#product">Product</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="#" class="btn btn-sm btn-secondary">Log in</a>
+      <a href="#" class="btn btn-sm btn-primary">Start free</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <h1>Your team runs on tabs and copy-paste. Flowra fixes that.</h1>
+    <p class="hero-subhead">Connect your tools, trigger actions automatically. No code required.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn btn-md btn-primary" style="background:#ff5530;border-color:#ff5530;">Get started free</a>
+      <a href="#" class="btn btn-md btn-secondary">See how it works →</a>
+    </div>
+
+    <!-- Browser mockup -->
+    <div class="browser-mockup">
+      <div class="browser-chrome">
+        <div class="browser-dots">
+          <div class="browser-dot"></div>
+          <div class="browser-dot"></div>
+          <div class="browser-dot"></div>
+        </div>
+        <div class="browser-bar">
+          <span>app.flowra.io</span>
+        </div>
+      </div>
+      <div class="browser-body">
+        <div class="browser-body-inner">
+          <svg class="placeholder-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="10" width="32" height="20" rx="4" stroke="#0a0a0a" stroke-width="2"/>
+            <circle cx="12" cy="20" r="3" fill="#0a0a0a"/>
+            <circle cx="28" cy="20" r="3" fill="#0a0a0a"/>
+            <path d="M15 20h10" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Product screenshot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <div class="trust-strip">
+    <span class="trust-label">Trusted by teams at</span>
+    <div class="trust-names">
+      <span>Notion</span>
+      <span>Vercel</span>
+      <span>Linear</span>
+      <span>Stripe</span>
+      <span>Figma</span>
+    </div>
+  </div>
+
+</body>
+</html>

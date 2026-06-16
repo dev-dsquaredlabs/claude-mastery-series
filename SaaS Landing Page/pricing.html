@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowra — Pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0a0a0a;
+      --coral:    #ff5530;
+      --hairline: #e5e7eb;
+      --text-2:   #45515e;
+      --text-muted: #8e8e93;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--black);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Section ── */
+    .pricing-section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .pricing-heading {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.20;
+      letter-spacing: -1px;
+      color: var(--black);
+    }
+
+    .pricing-subhead {
+      margin-top: 14px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text-2);
+    }
+
+    /* ── Grid ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    /* ── Badge wrapper — sits above the card ── */
+    .card-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .badge-slot {
+      height: 28px; /* reserve space so non-featured cards stay aligned */
+      display: flex;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--coral);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+
+    /* ── Card ── */
+    .pricing-card {
+      background: #ffffff;
+      border: 1px solid var(--hairline);
+      border-radius: 32px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .pricing-card.featured {
+      border-top: 4px solid var(--coral);
+      /* compensate so card height stays consistent */
+      padding-top: 29px;
+    }
+
+    /* ── Tier ── */
+    .tier-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.3px;
+    }
+
+    /* ── Price ── */
+    .tier-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .price-amount {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -1px;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .price-period {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    /* ── Features ── */
+    .tier-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tier-features li {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text-2);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .tier-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--hairline);
+      border: 1.5px solid #c4c9d0;
+    }
+
+    /* ── CTA ── */
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 9999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 24px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s, background 0.15s, color 0.15s;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: #fff;
+      border: 1.5px solid var(--black);
+    }
+    .btn-primary:hover { opacity: 0.82; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      border: 1.5px solid var(--black);
+    }
+    .btn-secondary:hover { background: var(--black); color: #fff; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    }
+
+    @media (max-width: 560px) {
+      .pricing-section { padding: 72px 20px; }
+      .pricing-heading { font-size: 30px; letter-spacing: -0.5px; }
+      .pricing-subhead { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="pricing" class="pricing-section">
+
+    <div class="pricing-header">
+      <h2 class="pricing-heading">Simple pricing. No surprises.</h2>
+      <p class="pricing-subhead">Start free. Upgrade when you're ready.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="card-wrapper">
+        <div class="badge-slot"></div>
+        <div class="pricing-card">
+          <span class="tier-name">Starter</span>
+          <div class="tier-price">
+            <span class="price-amount">$0</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <ul class="tier-features">
+            <li>Up to 3 active workflows</li>
+            <li>100 runs per month</li>
+            <li>Connect up to 5 apps</li>
+            <li>Community support</li>
+          </ul>
+          <a href="#" class="btn btn-secondary">Get started free</a>
+        </div>
+      </div>
+
+      <!-- Growth (featured) -->
+      <div class="card-wrapper">
+        <div class="badge-slot">
+          <span class="badge">Most popular</span>
+        </div>
+        <div class="pricing-card featured">
+          <span class="tier-name">Growth</span>
+          <div class="tier-price">
+            <span class="price-amount">$29</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <ul class="tier-features">
+            <li>Unlimited active workflows</li>
+            <li>10,000 runs per month</li>
+            <li>Connect unlimited apps</li>
+            <li>AI-powered triggers included</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Start with Growth</a>
+        </div>
+      </div>
+
+      <!-- Scale -->
+      <div class="card-wrapper">
+        <div class="badge-slot"></div>
+        <div class="pricing-card">
+          <span class="tier-name">Scale</span>
+          <div class="tier-price">
+            <span class="price-amount">$99</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <ul class="tier-features">
+            <li>Everything in Growth</li>
+            <li>100,000 runs per month</li>
+            <li>SSO & advanced permissions</li>
+            <li>Dedicated support & SLA</li>
+          </ul>
+          <a href="#" class="btn btn-secondary">Contact sales</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
