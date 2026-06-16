@@ -1,20 +1,20 @@
-# Claude Desktop Mastery: Real Projects, Real Results
+# Claude Mastery: Real Projects, Real Results
 
 A hands-on YouTube series teaching every major Claude Desktop feature through 5 real project builds — no fluff, no toy examples.
 
-## 📺 Videos
+## Videos
 
 | # | Project | Claude Features | Watch |
 |---|---------|----------------|-------|
-| 1 | SaaS Landing Page | Projects, Artifacts, Customize, Cowork | [Watch →](#) |
+| 1 | SaaS Landing Page | Projects, Artifacts, Customize, Cowork | [Watch →](https://youtu.be/pZ3NyxIWtj0?si=isfB2g0uq0rVJExO) |
 | 2 | Mobile App | Projects, Artifacts, Extended Thinking | [Watch →](#) |
 | 3 | Python Backend / Desktop App | Projects, Artifacts, Git & Cloud Dev | [Watch →](#) |
 | 4 | Data Analysis Dashboard | Projects, Artifacts, Cowork | [Watch →](#) |
 | 5 | Automation Workflow | Projects, Routines, Dispatch | [Watch →](#) |
 
-📋 [Full Playlist](#)
+[Full Playlist](https://www.youtube.com/playlist?list=PL1rTWcryo2aioxBbN6nxjhITkHAKayk_t)
 
-## 🗂 Repo Structure
+## Repo Structure
 
 Each video has its own branch with all source files, prompts, and assets used during recording.
 
